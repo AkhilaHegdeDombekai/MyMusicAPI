@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMusicAPI", "MyMusicAPI\MyMusicAPI.csproj", "{0147D622-7AF4-4592-8D5B-41505D851F70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMusicAPI", "MyMusicAPI\MyMusicAPI.csproj", "{0147D622-7AF4-4592-8D5B-41505D851F70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMusic.Data", "MyMusic.Data\MyMusic.Data.csproj", "{12A75971-BCCF-41E3-8DBC-9B7569362035}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMusic.Data", "MyMusic.Data\MyMusic.Data.csproj", "{12A75971-BCCF-41E3-8DBC-9B7569362035}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMusic.Core", "MyMusic.Core\MyMusic.Core.csproj", "{7E541C5D-F354-49AA-8FE7-40A21793D054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMusic.Core", "MyMusic.Core\MyMusic.Core.csproj", "{7E541C5D-F354-49AA-8FE7-40A21793D054}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMusic.Services", "MyMusic.Services\MyMusic.Services.csproj", "{7148D962-9A0A-4407-BF71-28C8BBB9DDF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMusic.Services", "MyMusic.Services\MyMusic.Services.csproj", "{7148D962-9A0A-4407-BF71-28C8BBB9DDF2}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MyMusic.DatabaseObjects", "MyMusic.DatabaseObjects\MyMusic.DatabaseObjects.sqlproj", "{AD597C65-D0D4-4846-BBED-8B66475745C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{7148D962-9A0A-4407-BF71-28C8BBB9DDF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7148D962-9A0A-4407-BF71-28C8BBB9DDF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7148D962-9A0A-4407-BF71-28C8BBB9DDF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
