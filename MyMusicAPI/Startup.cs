@@ -39,6 +39,7 @@ namespace MyMusicAPI
             services.AddScoped<IConnectionHelper, ConnectionHelper>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IArtistsRepository, ArtistsRepository>();
+            services.AddScoped<ISongsRepository, SongsRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -9,6 +9,8 @@ namespace MyMusic.Data.Model
         public int SongId { get; set; }
         public string SongName { get; set; }
         public DateTime Dor { get; set; }
-        public string CoverImage { get; set; }
+        public string CoverImage { get; set; }        
+        public int ArtistId { get; set; }
+        public decimal Rating { get; set; }
     }
 }

@@ -20,9 +20,17 @@ namespace MyMusic.Data.Repository
             _connectionHelper = connectionHelper ?? throw new ArgumentNullException(nameof(connectionHelper));
         }
 
-        public Task<int> DeleteArtist(int Id)
+        public async Task<int> DeleteArtist(int Id)
         {
-            throw new NotImplementedException();
+            
+            const string sql = "DeleteArtist";
+            using (var connection = _connectionHelper.GetDBConnection())
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@ArtistId", Id, DbType.Int32);
+                return await connection.ExecuteAsync(sql, parameters, commandType: CommandType.StoredProcedure);
+                
+            }            
         }
 
         public async Task<IEnumerable<Artists>> GetAllArtists()
@@ -39,11 +47,11 @@ namespace MyMusic.Data.Repository
         public async Task<Artists> GetArtistsById(int Id)
         {
             Artists artists = new Artists();
-            const string sql = "GetArtistByID";
+            const string sql = "GetArtistById";
             using (var connection = _connectionHelper.GetDBConnection())
             {
                 var parameters = new DynamicParameters();
-                parameters.Add("@Id", Id, DbType.Int32);
+                parameters.Add("@ArtistId", Id, DbType.Int32);
                 // artists = await connection.ExecuteAsync<Artists>(sql,parameters, CommandType.StoredProcedure).FirstOrDefault();
                 var data = await connection.QueryAsync<Artists>(sql, parameters, commandType: CommandType.StoredProcedure);
                 artists = data.ToList().FirstOrDefault();
