@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMusic.Core", "MyMusic.Cor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMusic.Services", "MyMusic.Services\MyMusic.Services.csproj", "{7148D962-9A0A-4407-BF71-28C8BBB9DDF2}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MyMusic.DatabaseObjects", "MyMusic.DatabaseObjects\MyMusic.DatabaseObjects.sqlproj", "{AD597C65-D0D4-4846-BBED-8B66475745C3}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MyMusicDatabase", "MyMusicDatabase\MyMusicDatabase.sqlproj", "{EAC37EE5-AC97-4C04-B2A0-16645BC87502}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,12 +35,12 @@ Global
 		{7148D962-9A0A-4407-BF71-28C8BBB9DDF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7148D962-9A0A-4407-BF71-28C8BBB9DDF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7148D962-9A0A-4407-BF71-28C8BBB9DDF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD597C65-D0D4-4846-BBED-8B66475745C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EAC37EE5-AC97-4C04-B2A0-16645BC87502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAC37EE5-AC97-4C04-B2A0-16645BC87502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAC37EE5-AC97-4C04-B2A0-16645BC87502}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EAC37EE5-AC97-4C04-B2A0-16645BC87502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAC37EE5-AC97-4C04-B2A0-16645BC87502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAC37EE5-AC97-4C04-B2A0-16645BC87502}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

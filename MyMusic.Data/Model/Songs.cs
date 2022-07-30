@@ -12,5 +12,6 @@ namespace MyMusic.Data.Model
         public string CoverImage { get; set; }        
         public int ArtistId { get; set; }
         public decimal Rating { get; set; }
+        public string ArtistsName { get; set; }
     }
 }

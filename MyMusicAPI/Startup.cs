@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,7 @@ namespace MyMusicAPI
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "*";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -32,6 +34,7 @@ namespace MyMusicAPI
         {
 
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyMusicAPI", Version = "v1" });
@@ -40,6 +43,19 @@ namespace MyMusicAPI
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IArtistsRepository, ArtistsRepository>();
             services.AddScoped<ISongsRepository, SongsRepository>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("http://localhost:4200",
+                                                          "*");
+                                      policy.AllowAnyHeader();
+                                      policy.AllowAnyMethod();                                      
+                                  });                
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,11 +68,17 @@ namespace MyMusicAPI
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyMusicAPI v1"));
             }
 
+            
+           
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseStaticFiles();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseEndpoints(endpoints =>
             {

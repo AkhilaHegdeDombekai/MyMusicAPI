@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MyMusic.Data.Repository
 {
-    public class SongsRepository:ISongsRepository
+    public class SongsRepository : ISongsRepository
     {
         private IConnectionHelper _connectionHelper;
 
@@ -92,6 +92,21 @@ namespace MyMusic.Data.Repository
                 songs = data.ToList().FirstOrDefault();
             }
             return songs;
+        }
+
+        public async Task UpdateSongRating(int songId, int rating, int userId)
+        {
+            const string sql = "UpdateSongRating";
+            using (var connection = _connectionHelper.GetDBConnection())
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@songId", songId, DbType.Int32);
+                parameters.Add("@rating", rating, DbType.Int32);
+                parameters.Add("@userId", userId, DbType.Int32);
+                // songs = await connection.ExecuteAsync<Songs>(sql,parameters, CommandType.StoredProcedure).FirstOrDefault();
+                await connection.ExecuteAsync(sql, parameters, commandType: CommandType.StoredProcedure);
+
+            }
         }
     }
 }

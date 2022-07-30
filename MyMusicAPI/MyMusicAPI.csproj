@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\CoverImages\" />
+    <None Include="wwwroot\Resources\CoverImages\logo-music.png" />
+    <None Include="wwwroot\Resources\CoverImages\mavwa laage cover image.jpg" />
   </ItemGroup>
 
 </Project>

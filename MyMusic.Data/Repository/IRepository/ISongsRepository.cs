@@ -14,6 +14,7 @@ namespace MyMusic.Data.Repository.IRepository
         Task<Songs> SaveSongs(Songs Artist);
         Task<Songs> UpdateSongs(Songs Artist);
         Task<int> DeleteSongs(int Id);
+        Task UpdateSongRating(int songId, int rating, int userId);
 
     }
 }

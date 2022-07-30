@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyMusic.Data.Model;
 using MyMusic.Data.Repository.IRepository;
@@ -14,6 +15,7 @@ using System.Threading.Tasks;
 
 namespace MyMusicAPI.Controllers
 {
+    //[EnableCors("SiteCorsPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class SongsController : ControllerBase
@@ -40,19 +42,21 @@ namespace MyMusicAPI.Controllers
         }
 
         [HttpPost, DisableRequestSizeLimit]
-        public async Task<Songs> SaveSong(IFormFile file,string songname,int artistId, DateTime Dor)
+        public async Task<Songs> SaveSong(IFormFile file, string songname, int artistId, DateTime Dor)
         {
             Songs songs = new Songs();
-            if(file.Length > 0)
+            file = Request.Form.Files[0];
+            var postData = Request.Form;
+            if (file.Length > 0)
             {
                 //song.coverImage = coverImageFile;
                 var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
                 var songFileData = new FileDataModel { File = file, FileExtension = "", FileName = fileName };
                 songs.CoverImage = FileUploadHelper.SaveCoverImage(songFileData);
             }
-            songs.SongName = songname;
-            songs.ArtistId = artistId;
-            songs.Dor= Dor;
+            songs.SongName = postData["songname"];
+            songs.ArtistId = Convert.ToInt32(postData["artistId"]);
+            songs.Dor = Convert.ToDateTime(postData["Dor"]);
             var savedSong = await _songsRepository.SaveSongs(songs);
             return savedSong;
         }
@@ -66,6 +70,14 @@ namespace MyMusicAPI.Controllers
         public async Task<HttpResponseMessage> DeleteSong(int Id)
         {
             await _songsRepository.DeleteSongs(Id);
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
+        [HttpPost]
+        [Route("UpdateSongRating/{songId}/{rating}/{userId}")]
+        public async Task<HttpResponseMessage> UpdateSongRating(int songId, int rating, int userId)
+        {
+            await _songsRepository.UpdateSongRating(songId,rating,userId);
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }

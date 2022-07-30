@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyMusic.Data.Model;
 using MyMusic.Data.Repository.IRepository;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace MyMusicAPI.Controllers
 {
+    //[EnableCors("SiteCorsPolicy")]
     [Route("api/[controller]")]
     [ApiController]
     public class ArtistsController : ControllerBase
