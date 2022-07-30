@@ -14,4 +14,4 @@ simple CRUD operation using Angular and C# API
    
    <br /><br /><br />
    - To Run application <br />
-     `MyMusicAdmin` -> `MyMusic`  and run `ng serve`
+     `root folder` ->   and run `ng serve`
