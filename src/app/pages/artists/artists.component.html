@@ -1,0 +1,40 @@
+<app-navigation></app-navigation>
+<div class="container">
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">All artists in my music</h1> 
+        <div class="text-muted text-center">
+            <button class="btn btn-lg btn-primary btn-block" type="button" disabled>add new artist</button>
+        </div>      
+    </div>
+   
+</div>
+
+<div>
+<div class="row mb-2">
+    <div class="col-md-6" *ngFor="let artist of artistsList">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary"> {{artist.artistName}}</strong>
+          <!-- <h3 class="mb-0">{{artist.bio}}</h3> -->
+          <div class="mb-1 text-muted">Date of birth : {{artist.dob |date}}</div>
+          <p class="card-text mb-auto">{{artist.bio}}</p>
+        </div>        
+      </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+    <!-- <div class="row text-center">
+    <div class="card text-center mt-5 ml-5 align-items-center" *ngFor="let artist of artistsList">
+        <div class="card-header">
+           <p class="text-center"> {{artist.artistName}}</p>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Date of birth : {{artist.dob |date}}</h5>
+            <p class="card-text text-muted"><small>{{artist.bio}}</small></p>
+        </div>
+        
+    </div>
+</div> -->

@@ -1,0 +1,34 @@
+<app-navigation></app-navigation>
+<div class="container">
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">All songs in my music</h1>
+        <p class="lead">rate the songs as you listen!</p>
+        <p>
+            <a routerLink="/addsongs" class="btn btn-primary my-2">add new song</a>
+            
+          </p>
+    </div>
+</div>
+<form [formGroup]="formgroup">
+    <div class="row text-center align-items-center ml-5">
+    <div class="card text-center mt-5 ml-5 mb-5 align-items-center" *ngFor="let songs of songsList">
+        <div class="card-header">
+            <div>
+                <img [src]="songs.coverImage" width="340" height="160" />
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{songs.songName}}</h5>
+            <p class="card-text"> {{songs.artistsName}}</p>
+            <p class="card-text text-muted"><small>{{songs.dor |date}}</small></p>
+            <p class="card-text">overall rating : {{songs.rating}}</p>          
+        </div>
+
+        <div class="text-muted text-center">
+            <p class="text-muted">click on star to add rating :</p><ngx-star-rating [formControlName]="songs.songId" [id]="songs.songId" title="click on star to add rating" (change)="ratingUpdate($event,songs.songId)"></ngx-star-rating>
+        </div>
+    </div>
+</div>
+</form>
+</div>

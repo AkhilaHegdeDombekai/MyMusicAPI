@@ -1,0 +1,37 @@
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/home">  <img src="../../../assets/MyMusic-Logo.png"  width="100" height="30"/></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/artists">Artists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/allsongs">Songs</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false">Musics</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">top 10</a>
+            <a class="dropdown-item" href="#">All songs</a>
+          </div>
+        </li> -->
+      </ul>
+      <!-- <form class="form-inline my-2 my-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Songs</a>
+        </li>
+      </form> -->
+      <a class="nav-link text-warning text-bold" routerLink="/">{{loginText}}</a>
+    </div>
+  </nav>

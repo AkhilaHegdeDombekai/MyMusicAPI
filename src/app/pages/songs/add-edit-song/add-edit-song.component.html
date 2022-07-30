@@ -1,0 +1,96 @@
+<app-navigation></app-navigation>
+<form class="form-signin" [formGroup]="addSongForm">
+    <div class="row">
+        <div class="col-mg-4">
+            <div class="text-center mb-4">
+
+                <h1 class="h3 mb-3 font-weight-normal">Add new song</h1>
+            </div>
+
+            <div class="form-label-group">
+                <input type="email" id="songName" class="form-control" placeholder="song name" required="" autofocus=""
+                    formControlName="songName">
+                <label for="songName">Song Name</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="date" id="dor" class="form-control" placeholder="date of release" required=""
+                    formControlName="dor">
+                <label for="dor">Date of Release</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="file" id="file" class="form-control" placeholder="cover image" required=""
+                    formControlName="file" (change)="onFileChange($event)">
+                <label for="file">Cover Image</label>
+            </div>
+
+            <div class="form-label-group">
+                
+                        <select formControlName="artistId" class="form-control form-select" id="artistId"
+                            aria-label="Floating label select example" placeholder="Select Artist" required=""
+                            autofocus="">
+                            <option> -select- </option>
+                            <option *ngFor="let artist of artistsList" [value]="artist.artistId">{{artist.artistName}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 text-bold alert-info cursor-pointer mb-2 mt-2 " title="click here to add new artists" (click)="openAddArtist()">
+                        <span><i class="bi bi-info"></i></span>
+                    </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="saveSongs()">Save Changes</button>
+          
+        </div>
+    </div>
+</form>
+
+
+  
+  <!-- Modal -->
+    <div class="modal-dialog" *ngIf="showModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new Artist</h5>
+          <button type="button" class="close" (click)="closeModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form class="form-signin" [formGroup]="addArtistForm">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center mb-4">
+            
+                            <h1 class="h3 mb-3 font-weight-normal">Add new song</h1>
+                        </div>
+            
+                        <div class="form-label-group">
+                            <input type="email" id="artistName" class="form-control" placeholder="artist name" required="" autofocus=""
+                                formControlName="artistName">
+                            <label for="artistName">artist Name</label>
+                        </div>
+            
+                        <div class="form-label-group">
+                            <input type="date" id="DOB" class="form-control" placeholder="date of birth" required=""
+                                formControlName="DOB">
+                            <label for="dor">Date of Birth</label>
+                        </div>
+            
+                        <div class="form-label-group">
+                            <textarea  id="Bio" class="form-control" placeholder="Bio" required=""
+                                formControlName="Bio"></textarea>
+                            <!-- <label for="Bio">Bio</label> -->
+                        </div>
+                       
+                      
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+          <button type="button" class="btn btn-primary" (click)="AddArtist()">Save changes</button>
+        </div>
+      </div>
+    </div>
+    

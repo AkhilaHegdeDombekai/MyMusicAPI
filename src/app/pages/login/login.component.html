@@ -1,0 +1,19 @@
+<form class="form-signin" [formGroup]="loginForm">
+    <div class="text-center mb-4">
+      <img class="mb-4" src="../../../assets/MyMusic-Logo.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>     
+    </div>
+  
+    <div class="form-label-group">
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" formControlName="emailId">
+      <label for="inputEmail">Email address</label>
+    </div>
+  
+    <div class="form-label-group">
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" formControlName="password">
+      <label for="inputPassword">Password</label>
+    </div>
+    
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="validate()">Sign in</button>
+    <p class="mt-5 mb-3 text-muted text-center">© MyMusic</p>
+  </form>

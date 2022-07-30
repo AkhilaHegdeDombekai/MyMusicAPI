@@ -1,0 +1,42 @@
+<app-navigation></app-navigation>
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1>My Music Album</h1>
+        <p class="lead text-muted">MyMusic provides you best all time favourite songs</p>
+        <p>
+          <a routerLink="/allsongs" class="btn btn-primary my-2">see all songs</a>          
+        </p>
+      </div>
+    </section>
+    <form [formGroup]="formgroup">
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row" >
+          <div class="col-md-4" *ngFor="let songs of songsList; let i = index">
+            <div class="card mb-4 shadow-sm">
+              <div>
+                <img [src]="songs.coverImage" width="340" height="160"/>
+            </div>
+  
+              <div class="card-body">
+                <p class="card-text">{{songs.songName}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                 <div>
+                    <span> {{songs.artistsName}}</span>
+                 </div>                 
+                  <small class="text-muted">{{songs.dor |date}}</small>
+                </div>
+                <div>
+                    <ngx-star-rating [formControlName]="songs.songId" [id]="'rating'" (click)="updateRate()"></ngx-star-rating>
+                 </div>
+              </div>
+            </div>
+          </div>        
+         
+        </div>
+      </div>
+    </div>
+  </form>
+  </main>
