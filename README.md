@@ -12,6 +12,8 @@ simple CRUD operation using Angular and C# API
    username/email : *akhilahegde@gmail.com* pwd : *R3gularP@ss* <br />
    username/email : *ahegde@gmail.com* pwd : *R3gularPa55* <br />
    
-   <br /><br /><br />
+   <br /><br />
+   - Run the API
+   <br />
    - To Run application <br />
      `root folder` ->   and run `ng serve`
